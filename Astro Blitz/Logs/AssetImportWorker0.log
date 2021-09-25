@@ -179,3 +179,11 @@ Received Import Request.
 Start importing Assets/Astro Blitz Asteroid-4.png.png using Guid(f7ad7a5ab311b41c683098d6db4ff25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b389526541892712f106dc8cf97bff29') in 0.153684 seconds 
   Import took 0.220703 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 1041.441662 seconds.
+  path: Assets/Astro Blitz Asteroid-5.png.png
+  artifactKey: Guid(347a47eac0a434453b6835d1606471ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Astro Blitz Asteroid-5.png.png using Guid(347a47eac0a434453b6835d1606471ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc22e87c6d0579f1465fc878c2657259') in 0.040249 seconds 
+  Import took 0.049880 seconds .
+
