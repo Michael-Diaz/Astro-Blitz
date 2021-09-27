@@ -38,8 +38,6 @@ public class Player_Movement : MonoBehaviour
             float speed = vel.magnitude;
             if (speed > 7)
                 astroBody.velocity = new Vector2(7 * vel.x / speed, 7 * vel.y / speed);
-
-            Debug.Log("Astronaut Speed: " + speed + "m/s");
         }
     }
 }
