@@ -6,6 +6,8 @@ public class Player_Movement : MonoBehaviour
 {
     Rigidbody2D astroBody;
 
+    float mapBounds = 48.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,15 +31,21 @@ public class Player_Movement : MonoBehaviour
             rotation = Quaternion.Euler(0, 0, angle - 90);
         astroBody.MoveRotation(rotation);
 
-        if(Input.GetButton("Fire1"))
-        {
-            float dMagnitude = Mathf.Sqrt((distance.x * distance.x) + (distance.y * distance.y));
-            astroBody.AddForce(new Vector2(distance.x / dMagnitude, distance.y / dMagnitude), ForceMode2D.Force);
+        Vector2 vel = astroBody.velocity;
+        float speed = vel.magnitude;
 
-            Vector2 vel = astroBody.velocity;
-            float speed = vel.magnitude;
-            if (speed > 7)
-                astroBody.velocity = new Vector2(7 * vel.x / speed, 7 * vel.y / speed);
+        if((Mathf.Abs(playerPos.x) >= mapBounds) || (Mathf.Abs(playerPos.y) >= mapBounds))
+            astroBody.AddForce((playerPos * -1) / playerPos.magnitude);
+        else
+        {
+            if(Input.GetButton("Fire1"))
+            {
+                float dMagnitude = Mathf.Sqrt((distance.x * distance.x) + (distance.y * distance.y));
+                astroBody.AddForce(new Vector2(distance.x / dMagnitude, distance.y / dMagnitude), ForceMode2D.Force);
+            }
         }
+
+        if (speed > 7)
+            astroBody.velocity = new Vector2(7 * vel.x / speed, 7 * vel.y / speed);
     }
 }
